@@ -1,11 +1,9 @@
 <header class="header">
   <div class="header__right-section">
-    <button class="header-button header-button--login">Se connecter</button>
-    <button class="header-button header-button--signup">S'inscrire</button>
+    <div class="header-link">Se connecter</div>
+    <div class="header-link">S'inscrire</div>
   </div>
 </header>
-
-<div class="banner"></div>
 
 <div class="main-container">
   <div class="jokes-lists">
@@ -16,7 +14,16 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
         </div>
         <div class="jokes-list__joke__action">
-            ...
+            <div class="jokes-list__joke__action__meta">
+              <div class="jokes-list__joke__action__meta__date">2022-03-02 11:34:11</div>
+              <div class="jokes-list__joke__action__meta__user">Par Billy Bob</div>
+            </div>
+            <div class="jokes-list__joke__action__vote">
+              <div class="jokes-list__joke__action__vote__count">123</div>
+              <div class="jokes-list__joke__action__vote__icon">
+                <fa-icon [icon]="faThumbsUp" size="3x" [styles]="{'color': '#2D41A0'}" [classes]="['my-icon-class']"></fa-icon>
+              </div>
+            </div>
         </div>
       </div>
       <div class="jokes-list__joke">
@@ -117,8 +124,8 @@
 
 <div class="add-joke-container">
   <div class="add-joke">
-    <h1 class="add-joke__title">Ajouter un joke</h1>
-    <p>...</p>
+    <div class="add-joke__title">Ajouter une joke</div>
+    <p class="add-joke__message" >Vous devez être connecté pour ajouter une joke.</p>
   </div>
 </div>
 

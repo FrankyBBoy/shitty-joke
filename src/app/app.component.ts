@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shitty-joke';
+  faThumbsUp = faThumbsUp;
 }

@@ -25,44 +25,32 @@
   }
 }
 
-.header-button {
-  cursor: pointer;
-  outline-style: none;
-  border: none;
-  font-family: inherit;
-  height: 3rem;
-  padding: 0 1rem;
-  border-radius: 2px;
+.header-link {
   font-size: 1.5rem;
-  font-weight: 500;
+  color: white;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
   transition: all .2s;
-  box-shadow: 1px 1px 2px black;
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    background-color: var(--color-primary-light);
+  }
 
   &:active {
-    transform: translateY(2px);
-  }
-
-  &--login {
-    margin-right: 1rem;
-
     background-color: var(--color-primary-lighter);
-    color: var(--color-primary-dark);
-
-    &:hover {
-      background-color: var(--color-primary-dark);
-      color: var(--color-primary-lighter);
-    }
-  }
-
-  &--signup {
-    background-color: var(--color-secondary);
-    color: white;
-
-    &:hover {
-      background-color: var(--color-secondary-dark);
-    }
+    color: var(--color-primary);
   }
 }
+
 
 .main-container {
   padding: 5rem 0;
@@ -82,7 +70,7 @@
   &__title {
     font-size: 6rem;
     font-weight: 300;
-    color: var(--color-secondary);
+    color: var(--color-secondary-light);
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 2rem;
@@ -93,7 +81,7 @@
     background: linear-gradient(to top left, var(--color-primary-lighter), white);
     border: 1px solid var(--color-primary-lighter);
     padding: 2rem 4rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     &:not(:last-child) {
@@ -108,7 +96,34 @@
     }
 
     &__action {
-      background-color: orangered;
+      border-top: 1px solid lightgray;
+      padding-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+
+      &__meta {
+        line-height: 1.3;
+        font-size: 1rem;
+        color: gray;
+        font-size: 600;
+      }
+
+      &__vote {
+
+          display: flex;
+          align-items: flex-end;
+
+          &__count {
+            margin-right: 1rem;
+            color: var(--color-secondary-light);
+            font-size: 1.3rem;
+            font-weight: 900;
+          }
+
+          &__icon {
+            cursor: pointer;
+          }
+      }
     }
   }
 }
@@ -120,7 +135,18 @@
 }
 
 .add-joke {
-  background-color: yellow;
   max-width: 80rem;
   margin: 0 auto;
+
+  &__title {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__message {
+    color: white;
+    font-size: 1.4rem;
+  }
 }
