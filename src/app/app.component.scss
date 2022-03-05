@@ -18,10 +18,28 @@
   display: flex;
   padding: 0 2rem;
 
+  &__left-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
   &__right-section {
     margin-left: auto;
     display: flex;
     align-items: center;
+  }
+}
+
+.header-home {
+  &__icon {
+    margin-right: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
   }
 }
 
