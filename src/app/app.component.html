@@ -2,6 +2,14 @@
   <div class="header__right-section">
     <div class="header-link">Se connecter</div>
     <div class="header-link">S'inscrire</div>
+    <!--
+    <div class="header-user">
+      <div class="header-user__icon">
+        <fa-icon [icon]="faUser" size="2x" [styles]="{'color': 'white'}"></fa-icon>
+      </div>
+      <div class="header-user__name">FrankyBoy</div>
+    </div>
+    -->
   </div>
 </header>
 
@@ -21,7 +29,7 @@
             <div class="jokes-list__joke__action__vote">
               <div class="jokes-list__joke__action__vote__count">123</div>
               <div class="jokes-list__joke__action__vote__icon">
-                <fa-icon [icon]="faThumbsUp" size="3x" [styles]="{'color': '#2D41A0'}" [classes]="['my-icon-class']"></fa-icon>
+                <fa-icon [icon]="faThumbsUp" size="3x" [styles]="{'color': '#2D41A0'}"></fa-icon>
               </div>
             </div>
         </div>
@@ -125,7 +133,7 @@
 <div class="add-joke-container">
   <div class="add-joke">
     <div class="add-joke__title">Ajouter une joke</div>
-    <p class="add-joke__message" >Vous devez être connecté pour ajouter une joke.</p>
+    <p class="add-joke__message" >Vous devez être <span class="add-joke__message__link">connecté</span> pour ajouter une joke.</p>
   </div>
 </div>
 
