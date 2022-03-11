@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shitty-jokes": {
+      "hosting": {
+        "shitty-joke": [
+          "shitty-jokes"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shitty-jokes"
+  }
+}
