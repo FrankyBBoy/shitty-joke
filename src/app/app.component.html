@@ -1,153 +1,42 @@
 <header class="header">
-  <div class="header__left-section">
+  <div routerLink="/" class="header__left-section">
     <div class="header-home__icon">
       <fa-icon [icon]="faToilet" size="3x" [styles]="{'color': 'white'}"></fa-icon>
     </div>
     <div class="header-home__title">ShittyJokes</div>
   </div>
   <div class="header__right-section">
-    <div class="header-link">Se connecter</div>
-    <!--
-    <div class="header-link">S'inscrire</div>
-    -->
-    <!--
-    <div class="header-user">
+    <ng-template #showLogin>
+      <div routerLink="/login" class="header-link">Se connecter</div>
+    </ng-template>
+
+    <div *ngIf="auth.user | async as user; else showLogin" class="header-user">
       <div class="header-user__icon">
         <fa-icon [icon]="faUser" size="2x" [styles]="{'color': 'white'}"></fa-icon>
       </div>
-      <div class="header-user__name">FrankyBoy</div>
+      <div class="header-user__name">{{ user.displayName }}</div>
+      <div class="header-user__logout-icon" (click)="logout()">
+        <fa-icon [icon]="faArrowAltCircleRight" size="2x" [styles]="{'color': 'white'}"></fa-icon>
+      </div>
     </div>
-    -->
+
   </div>
 </header>
 
 <div class="main-container">
-
-  <firebase-ui></firebase-ui>
-
-  <div class="jokes-lists">
-    <div class="jokes-list">
-      <div class="jokes-list__title">Nouveautés</div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            <div class="jokes-list__joke__action__meta">
-              <div class="jokes-list__joke__action__meta__date">2022-03-02 11:34:11</div>
-              <div class="jokes-list__joke__action__meta__user">Par Billy Bob</div>
-            </div>
-            <div class="jokes-list__joke__action__vote">
-              <div class="jokes-list__joke__action__vote__count">123</div>
-              <div class="jokes-list__joke__action__vote__icon">
-                <fa-icon [icon]="faThumbsUp" size="3x" [styles]="{'color': '#2D41A0'}"></fa-icon>
-              </div>
-            </div>
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-    </div>
-
-    <div class="jokes-list">
-      <div class="jokes-list__title">Top 10</div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-      <div class="jokes-list__joke">
-        <div class="jokes-list__joke__content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-        </div>
-        <div class="jokes-list__joke__action">
-            ...
-        </div>
-      </div>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 
 <div class="add-joke-container">
   <div class="add-joke">
     <div class="add-joke__title">Ajouter une joke</div>
-    <p class="add-joke__message" >Vous devez être <span class="add-joke__message__link">connecté</span> pour ajouter une joke.</p>
+    <ng-template #showUnavailableMessage>
+      <p class="add-joke__message" >Vous devez être <span routerLink="/login" class="add-joke__message__link">connecté</span> pour ajouter une joke.</p>
+    </ng-template>
+
+
+    <div *ngIf="auth.user | async as user; else showUnavailableMessage" class="add-joke__form">
+      formulaire...
+    </div>
   </div>
 </div>
-
-<!--
-<router-outlet></router-outlet>
--->

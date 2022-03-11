@@ -12,6 +12,8 @@ import { firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login/login.component';
+import { NewsComponent } from './components/news/news/news.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInOptions: [
@@ -21,7 +23,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
