@@ -1,53 +1,23 @@
 <div class="jokes-lists">
   <div class="jokes-list">
     <div class="jokes-list__title">Nouveautés</div>
-    <div class="jokes-list__joke">
+    <div class="jokes-list__joke" *ngFor="let joke of jokes | async">
       <div class="jokes-list__joke__content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
+        {{ joke.content }}
       </div>
       <div class="jokes-list__joke__action">
-          <div class="jokes-list__joke__action__meta">
-            <div class="jokes-list__joke__action__meta__date">2022-03-02 11:34:11</div>
-            <div class="jokes-list__joke__action__meta__user">Par Billy Bob</div>
+        <div class="jokes-list__joke__action__meta">
+          <div class="jokes-list__joke__action__meta__date">{{ joke.created_at.toDate() | date:'yyyy/MM/dd h:mm:ss a' }}</div>
+          <div class="jokes-list__joke__action__meta__user">Par {{ joke.author.name }}</div>
+        </div>
+        <!-- TODO : Like feature
+        <div class="jokes-list__joke__action__vote">
+          <div class="jokes-list__joke__action__vote__count">123</div>
+          <div class="jokes-list__joke__action__vote__icon">
+            <fa-icon [icon]="faThumbsUp" size="3x" [styles]="{'color': '#2D41A0'}"></fa-icon>
           </div>
-          <div class="jokes-list__joke__action__vote">
-            <div class="jokes-list__joke__action__vote__count">123</div>
-            <div class="jokes-list__joke__action__vote__icon">
-              <fa-icon [icon]="faThumbsUp" size="3x" [styles]="{'color': '#2D41A0'}"></fa-icon>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="jokes-list__joke">
-      <div class="jokes-list__joke__content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-      </div>
-      <div class="jokes-list__joke__action">
-          ...
-      </div>
-    </div>
-    <div class="jokes-list__joke">
-      <div class="jokes-list__joke__content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-      </div>
-      <div class="jokes-list__joke__action">
-          ...
-      </div>
-    </div>
-    <div class="jokes-list__joke">
-      <div class="jokes-list__joke__content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-      </div>
-      <div class="jokes-list__joke__action">
-          ...
-      </div>
-    </div>
-    <div class="jokes-list__joke">
-      <div class="jokes-list__joke__content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla tincidunt erat, vel porttitor tellus rutrum viverra. Nulla et orci quis risus maximus imperdiet vitae vitae purus. Donec posuere sed nisl id consectetur. Integer leo purus, accumsan nec tempus non, convallis sit amet eros. Cras nunc quam, iaculis at elit.
-      </div>
-      <div class="jokes-list__joke__action">
-          ...
+        </div>
+        -->
       </div>
     </div>
   </div>
